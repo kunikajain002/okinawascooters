@@ -1,0 +1,342 @@
+/* /Nav css goes here/ */
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    font-family: 'Roboto',sans-serif;
+    font-size: 10px;
+}
+a{
+    text-decoration: none;
+}
+ul{
+    list-style: none;
+}
+header{
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.container{
+    /* position: absolute; */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 90vh;
+    max-width: 117rem;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    /* animation: animate 16s ease-in-out infinite;
+    background-size: cover; */
+}
+.footer-container{
+    /* position: absolute; */
+    left: 0;
+    top: 0;
+    width: 100%;
+    max-width: 117rem;
+    margin: 0 auto;
+    padding-bottom: 7rem;
+    padding-right: 2rem;
+    padding-left: 2rem;
+    /* animation: animate 16s ease-in-out infinite;
+    background-size: cover; */
+}
+/* @keyframes animate{
+    0%,100%{
+        background-image: url(1.png);
+    }
+    25%{
+        background-image: url(2.png);
+    }
+    50%{
+        background-image: url(3.png);
+    }
+    75%{
+        background-image: url(4.png);
+    }
+} */
+.navbar{
+    width: 100%;
+    max-width: 117rem;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+.menu-icons{
+    color: rgb(253, 253, 253);
+    font-size: 4rem;
+    position: absolute;
+    top: 5%;
+    right: 2rem;
+    cursor: pointer;
+    z-index: 1500;
+    display: none;
+}
+nav{
+    display: flex;
+    width: 100%;
+    height: 8rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+
+}
+.logo{
+    width: 5rem;
+    height: 5rem;
+    background-color: #eb3007;
+    display: flex;
+    border-radius: 100%;
+    margin-right: 10rem;
+    margin-top: 18px;
+}
+.logo i{
+    margin: auto;
+    font-size: 3rem;
+   color: #eee;
+}
+.nav-list{
+  display: flex;
+}
+.nav-list li{
+    
+    line-height: 8rem;
+    position: relative;
+}
+.nav-list a {
+    display: block;
+    color: rgb(255, 255, 255);
+    padding: 0 1.5rem;
+    font-size: 1.6rem;
+    transition: color 600ms;
+
+}
+.nav-list a:hover{
+    color: #eb3007;
+}
+.btn{
+    padding: 1.3rem;
+    display: inline-block;
+    background-color: #eb3007;
+    border: 2px solid #eb3007;
+    border-radius: 5rem;
+    transition: background-color 650ms;
+}
+.btn:hover{
+    color: #eb3007;
+    background-color: rgba(0,0,0,.2);
+
+}
+.sub-menu{
+    width: 20rem;
+    display: block;
+    position: absolute;
+    border-top: 3px solid #eb3007;
+    background-color: #272727;
+    z-index: 1000;
+    top: 16rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 650ms ease;
+}
+.sub-menu::before{
+    content: "";
+    position: absolute;
+    top: -2.5rem;
+    left: 3rem;
+    border: 1.2rem solid transparent;
+    border-bottom-color: #eb3007;
+}
+.sub-menu .sub-menu::before{
+    top: .9rem;
+    left: -2.5rem;
+    border: 1.2rem solid transparent;
+    border-right-color: #eb3007;
+}
+.sub-menu .sub-menu{
+    border-top: none;
+    border-left: 3px solid #eb3007;
+    top: 0;
+    left: 160%;
+}
+.nav-list li:hover > .sub-menu{
+    top: 8rem;
+    opacity: 1;
+    visibility: visible;
+}
+.sub-menu li:hover >.sub-menu{
+    top:0;
+    left: 100%;
+}
+li.move-right{
+    margin: auto 0 auto auto;
+    line-height: initial;
+}
+.videoContainer{
+    background: #f10011;
+    width: 86px;
+    height: 5px;
+    position: absolute;
+    bottom: -135;
+    left: 0;
+    content: "";
+    right: 0;
+    margin: 0 auto;
+}
+/* @media screen and (max-width : 1208px){
+    .header{
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0; 
+    }
+    .menu-icons{
+        display: block;
+    }
+    .ion-md-close{
+        display: none;
+    }
+    nav.active .ion-md-close{
+        display: block;
+    }
+    nav.active .ion-md-menu{
+        display: none;
+    }
+    nav.active .nav-list{
+        display: flex;
+    }
+    
+} */
+@media screen and (max-width : 850px){
+    .nav-list{
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        display: none;
+        flex-direction: column;
+        align-items: initial;
+        background-color: #000000;
+        z-index: 1000;
+        overflow-y: scroll;
+    }
+    .nav-list a::after{
+        color: #eb3007;
+    }
+    .nav-list > li{
+        line-height: 6rem;
+    }
+    .sub-menu {
+        position: initial;
+        border: 3px solid transparent;
+        border-left-color: #eb3007;
+        margin-left: 1rem;
+        max-height: 0;
+        display: none;
+    }
+    .sub-menu::before{
+        display: none;
+    }
+    ul.nav-list:hover .sub-menu{
+        display: block;
+    }
+    .nav-list li:hover >.sub-menu{
+        opacity: 1;
+        visibility: visible;
+        max-height: initial;
+    }
+    li.move-right{
+        margin: 0 auto 0 0 ;
+    }
+    .menu-icons{
+        display: block;
+    }
+    .ion-md-close{
+        display: none;
+    }
+    nav.active .ion-md-close{
+        display: block;
+    }
+    nav.active .ion-md-menu{
+        display: none;
+    }
+    nav.active .nav-list{
+        display: flex;
+    }
+    /* div.box-sizing{
+        font-size: 20px;
+    } */
+    
+}
+/* /End nav css/ */
+
+
+.bg1{
+    width: 100%;
+    height: 100vh;
+    background-image: url(https://okinawascooters.com/wp-content/uploads/2020/05/Bike1.jpg);
+    background-size: cover;
+display: block;
+}
+
+.bg2{
+    width: 100vw;
+    height: 100vh;
+    background-image: url(5.png);
+    background-size: cover;
+display: none;
+}
+
+.feedback {
+    background-color : #eb3007;
+    border: 2px solid #eb3007;
+    border-radius: 4rem;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 4rem
+  }
+  
+  .disappear {
+    position: fixed;
+    bottom: 4px;
+    left: 10px;
+  }
+  .btn{
+    margin: 2px;
+    padding: 1.3rem;
+    display: inline-block;
+    background-color: #eb3007;
+    border: 2px solid #eb3007;
+    border-radius: 5rem;
+    transition: background-color 650ms;
+}
+.btn2{
+    margin: 2px;
+    padding: 1.3rem;
+    display: inline-block;
+    background-color: cornsilk;
+    border: 2px solid #eb3007;
+    color: #eb3007;
+    
+    border-radius: 5rem;
+    transition: background-color 650ms;
+}
+.btn:hover{
+    color: #eb3007;
+    background-color: rgba(0,0,0,.2);
+
+}
+.btn2:hover{
+    color: #eb3007;
+    background-color: rgba(0,0,0,.2);
+
+}
+
+@media all and (max-width: 499px) {
+    .bg1 {display: none;}
+    .bg2 {display: block;}
+}
+
