@@ -339,3 +339,29 @@ display: none;
     .bg2 {display: block;}
 }
 
+.mobilevideobg {
+    background: url(//okinawascooters.com/wp-content/uploads/2020/04/iphone.png) no-repeat center center;
+    width: 100%;
+    height: 690px;
+}
+#tv_container {
+    width: 400px; /* Adjust TV image width */
+    height: 300px; /* Adjust TV image height */
+    position: relative;
+}
+#tv_container:after {
+    content: '';
+    display: block;
+    width: 20%;
+    height: 20%;
+    left: 0px;
+    top: 0px;
+    position: absolute;
+    z-index: 10;
+}
+#tv_container video {
+    position: absolute;
+    top: 30px; /* Adjust top position */
+    left: 40px; /* Adjust left position */
+    z-index: 5;
+}
